@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+<head>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+
+    {% block head %}
+    {% endblock %}
+
+</head>
+
+<body>
+    {% block body %}
+        Site Works
+    <br/>
+        {{ value }}
+
+        <img src="{% static 'image.jpg'" alt="Static URL Wrong"/>
+
+    {% endblock %}
+</body>
+</html>
