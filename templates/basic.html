@@ -3,21 +3,35 @@
 <head>
     <title>
         {% block title %}
+
         {% endblock %}
     </title>
 
     {% block head %}
+        <link rel="stylesheet" href="{% static 'css/first.css' %}" />
     {% endblock %}
 
 </head>
 
 <body>
     {% block body %}
-        Site Works
-    <br/>
-        {{ value }}
+    <div class="bordered">
+        Site Works /// If you see border styles work!
+    </div>
 
-        <img src="{% static 'image.jpg'" alt="Static URL Wrong"/>
+    <br/>
+        <a href="add/">add to db</a><br/>
+        <a href="clear">clear db</a><br/>
+        <a href="clear?password=mysuperpass">clear db[secure]</a><br/>
+        <a href="admin/">Admin Panel</a>
+    <hr>
+    items in db: {{ count }}
+    <br/>
+    {% for obj in objects %}
+            {% include "snippets/first_snippet.html" with value=obj%}
+    {% endfor %}
+    <hr>
+        <img src="{% static 'image.jpg'%}" alt="Static doesnt work!"/>
 
     {% endblock %}
 </body>

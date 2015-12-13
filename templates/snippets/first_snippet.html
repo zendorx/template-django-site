@@ -1,7 +1,7 @@
 {% load static %}
 
 <div id="first_snippet">
-    id:{% value.id %}<br/>
-    name: {% value.name &}<br/>
-    <img src="{% static value.image.url %}" alt="Media doesnt work!"><br/>
+    id:{{ value.id }}<br/>
+    name: {{ value.name }}<br/>
+    <img src={% static value.image.url %} alt="Media doesnt work!"><br/>
 </div>
